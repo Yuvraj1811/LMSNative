@@ -1,96 +1,76 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Dropdown} from 'react-native-element-dropdown';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import {View, Text, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {Picker} from '@react-native-picker/picker';
 
-const data = [
-  {label: 'Item 1', value: '1'},
-  {label: 'Item 2', value: '2'},
-  {label: 'Item 3', value: '3'},
-  {label: 'Item 4', value: '4'},
-  {label: 'Item 5', value: '5'},
-  {label: 'Item 6', value: '6'},
-  {label: 'Item 7', value: '7'},
-  {label: 'Item 8', value: '8'},
-];
+const ProjectDropDown = () => {
+  const [projects, setProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-const DropdownComponent = () => {
-  const [value, setValue] = useState(null);
-  const [isFocus, setIsFocus] = useState(false);
+  useEffect(() => {
+    fetch('http://103.224.246.93:9092/api/v1/project/getall')
+      .then(response => {if(!response.ok){
+
+        throw new Error('Failed to fetch project')
+      }
+    return response.json()
+    })
+      .then(data => {
+        setProjects(data.data);
+        setSelectedProject(data.data[0]);
+        setLoading(false)
+      })
+      .catch(error => {
+        console.log('Error fetching problem: ', error);
+        setError(error)
+        setLoading(false)
+      });
+  }, []);
+
+  if (loading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (error) {
+    return <Text>Error: {error.message}</Text>;
+  }
 
   return (
-    <View style={styles.container}>
-      <Dropdown
-        style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
-        placeholderStyle={styles.placeholderStyle}
-        selectedTextStyle={styles.selectedTextStyle}
-        inputSearchStyle={styles.inputSearchStyle}
-        itemTextStyle={{color: 'black'}}
-        iconStyle={styles.iconStyle}
-        data={data}
-        search
-        maxHeight={300}
-        labelField="label"
-        valueField="value"
-        placeholder={!isFocus ? 'SELECT PROJECT' : '...'}
-        searchPlaceholder="Search..."
-        value={value}
-        onFocus={() => setIsFocus(true)}
-        onBlur={() => setIsFocus(false)}
-        onChange={item => {
-          setValue(item.value);
-          setIsFocus(false);
-        }}
-      />
+    <View
+      style={{
+        marginTop: 20,
+        alignItems: 'center',
+        borderWidth: 1.5,
+        height: 57.5,
+        width: 303,
+        alignSelf: 'center',
+        borderColor: '#07009E',
+      }}>
+      <Picker
+        dropdownIconColor="#FFFFFF"
+        style={{height: 50, width: 300, backgroundColor: '#07009E'}}
+        selectedValue={selectedProject}
+        onValueChange={(itemValue, itemIndex) => setSelectedProject(itemValue)}>
+        {projects.map(project => (
+          <Picker.Item
+            style={styles.textStyle}
+            label={project.projectTitle}
+            value={project}
+            key={project.id}
+          />
+        ))}
+      </Picker>
     </View>
   );
 };
 
-export default DropdownComponent;
+export default ProjectDropDown;
 
 const styles = StyleSheet.create({
-  container: {
+  textStyle: {
+    color: '#07009E',
+    fontFamily: 'Nunito-Medium',
     backgroundColor: 'white',
-    padding: 16,
-  },
-  dropdown: {
-    height: 50,
-    borderColor: 'gray',
-    borderWidth: 0.5,
-    borderRadius: 8,
-    paddingHorizontal: 8,
-    // color: 'black',
-  },
-  icon: {
-    marginRight: 5,
-    // color: 'black',
-  },
-  label: {
-    position: 'absolute',
-    backgroundColor: 'white',
-    left: 22,
-    top: 8,
-    zIndex: 999,
-    paddingHorizontal: 8,
-    fontSize: 14,
-    color: 'black',
-  },
-  placeholderStyle: {
-    fontSize: 16,
-    color: 'black',
-  },
-  selectedTextStyle: {
-    fontSize: 16,
-    color: 'black',
-  },
-  iconStyle: {
-    width: 20,
-    height: 20,
-    color: 'black',
-  },
-  inputSearchStyle: {
-    height: 40,
-    fontSize: 16,
-    color: 'black',
   },
 });

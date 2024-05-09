@@ -53,7 +53,7 @@ const LoginScreen = () => {
       <SafeAreaView style={styles.container}>
         <ImageBackground
           style={styles.image1}
-          source={require('../assets/images/Rectangle1.png')}
+          source={require('../assets/images/Rectangle1.2.png')}
         />
         <Text style={styles.text}>LMS</Text>
         <TextDynamic />
@@ -61,11 +61,11 @@ const LoginScreen = () => {
         <View style={styles.textInputView}>
           <TextInput
             style={styles.textInput}
-            placeholderTextColor={'#2F80ED'}
+            placeholderTextColor={'#07009E'}
             mode="outlined"
             label={'Email'}
-            activeOutlineColor="#2F80ED"
-            outlineColor="#2F80ED"
+            activeOutlineColor="#07009E"
+            outlineColor="#07009E"
             textColor="black"
             left={<TextInput.Icon name="mail" size={30} color="black" />}
             onChangeText={setUserName}
@@ -73,16 +73,16 @@ const LoginScreen = () => {
           <Icon
             name="mail"
             size={30}
-            color="#2F80ED"
+            color="#07009E"
             style={{bottom: 47, right: 125}}
           />
           <TextInput
             style={styles.textInput}
-            placeholderTextColor={'#2F80ED'}
+            placeholderTextColor={'#07009E'}
             mode="outlined"
             label={'Password'}
-            activeOutlineColor="#2F80ED"
-            outlineColor="#2F80ED"
+            activeOutlineColor="#07009E"
+            outlineColor="#07009E"
             textColor="black"
             left={<TextInput.Icon name="lock" size={30} color="black" />}
             onChangeText={setPassword}
@@ -91,7 +91,7 @@ const LoginScreen = () => {
           <Icon
             name="lock"
             size={30}
-            color="#2F80ED"
+            color="#07009E"
             style={{bottom: 47, right: 120}}
           />
         </View>
@@ -100,14 +100,14 @@ const LoginScreen = () => {
             disabled={false}
             value={toggleCheckBox}
             onValueChange={newValue => setToggleCheckBox(newValue)}
-            tintColors={{true: '#2F80ED', false: '#2F80ED'}}
+            tintColors={{true: '#07009E', false: '#07009E'}}
           />
           <Text style={styles.remText}>Remember Me</Text>
           <Text style={styles.forText}>Forget Password?</Text>
         </View>
         <ImageBackground
           style={styles.image3}
-          source={require('../assets/images/Rectangle3.png')}>
+          source={require('../assets/images/Rectangle3.3.png')}>
           <TouchableOpacity onPress={checkCredentials} style={styles.btn}>
             <Text style={styles.btnText}>LOGIN</Text>
           </TouchableOpacity>
@@ -133,18 +133,18 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Nunito-ExtraBold',
     fontSize: 35,
-    color: '#2F80ED',
+    color: '#07009E',
     bottom: 110,
   },
   login: {
     fontFamily: 'Nunito-Bold',
-    color: '#2F80ED',
+    color: '#07009E',
     fontSize: 25,
     bottom: 70,
   },
   textInput: {
     backgroundColor: 'white',
-    borderColor: '#2F80ED',
+    borderColor: '#07009E',
     width: 300,
     marginBottom: 7,
     flexDirection: 'row',
@@ -159,16 +159,16 @@ const styles = StyleSheet.create({
     bottom: 70,
   },
   remText: {
-    color: '#2F80ED',
+    color: '#07009E',
     fontFamily: 'Nunito-Bold',
     marginRight: 70,
   },
   forText: {
-    color: '#2F80ED',
+    color: '#07009E',
     fontFamily: 'Nunito-Bold',
   },
   btnText: {
-    color: '#2F80ED',
+    color: '#07009E',
     fontFamily: 'Nunito-Bold',
   },
   image3: {

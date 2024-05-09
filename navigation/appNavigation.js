@@ -6,6 +6,10 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import DrawerNavigation from './drawerNavigation';
 import Icon from 'react-native-vector-icons/FontAwesome6';
+import ProjectScreen from '../screens/ProjectScreen';
+import VendorScreen from '../screens/VendorScreen';
+import ClientScreen from '../screens/ClientScreen';
+import LeadScreen from '../screens/LeadScreen';
 
 
 
@@ -15,10 +19,14 @@ const Stack = createNativeStackNavigator();
 const AppNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName='Drawer'>
+      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName='Drawer' >
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Drawer" component={CustomDrawerNavigation} />
+        <Stack.Screen name="Client" component={ClientScreen}/>
+        <Stack.Screen name="Project" component={ProjectScreen}/>
+        <Stack.Screen name="Vendor" component={VendorScreen}/>
+        <Stack.Screen name="Lead" component={LeadScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -37,7 +45,7 @@ const CustomDrawerNavigation = () => {
         headerTintColor:'#FFFFFF',
         headerTitleAlign:'center',
         headerStyle: {
-          backgroundColor: '#2F80ED',
+          backgroundColor: '#07009E',
 
         },
         headerTitleStyle:{

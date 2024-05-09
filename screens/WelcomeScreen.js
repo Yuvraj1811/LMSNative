@@ -17,11 +17,11 @@ const WelcomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <Image
         style={styles.image1}
-        source={require('../assets/images/Rectangle1.png')}
+        source={require('../assets/images/Rectangle1.2.png')}
       />
       <Image
         style={styles.image2}
-        source={require('../assets/images/Rectangle2.png')}
+        source={require('../assets/images/Rectangle2.2.png')}
       />
       <View style={styles.textView}>
         <Animatable.Text
@@ -40,7 +40,7 @@ const WelcomeScreen = () => {
 
       <Image
         style={styles.image3}
-        source={require('../assets/images/Rectangle3.png')}
+        source={require('../assets/images/Rectangle3.3.png')}
       />
       <TouchableOpacity
         onPress={() => {
@@ -85,12 +85,12 @@ const styles = StyleSheet.create({
     marginTop: 130,
   },
   text: {
-    color: '#2F80ED',
+    color: '#07009E',
     fontFamily: 'Nunito-Bold',
     fontSize: 20,
   },
   text2: {
-    color: '#2F80ED',
+    color: '#07009E',
     fontFamily: 'Nunito-ExtraBold',
     fontSize: 50,
   },
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   btnText: {
-    color: '#2F80ED',
+    color: '#07009E',
     fontFamily: 'Nunito-Bold',
   },
 });

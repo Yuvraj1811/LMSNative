@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 import {
   createDrawerNavigator,
-  DrawerContentScrollView,
-  DrawerItem,
+  
 } from '@react-navigation/drawer';
 import CustomDrawer from '../components/CustomDrawer';
 import DashBoardScreen from '../screens/DashBoardScreen';

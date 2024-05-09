@@ -70,12 +70,12 @@ const CustomDrawer = ({route, ...props}) => {
   
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor:'#07009E'}}>
       <DrawerContentScrollView
         {...props}
-        contentContainerStyle={{backgroundColor: 'blue'}}>
+        contentContainerStyle={{backgroundColor: '#07009E'}}>
         <ImageBackground
-          source={require('../assets/images/Rectangle1.png')}
+          source={require('../assets/images/Rectangle1.2.png')}
           style={{alignItems: 'center', padding: 50, height: 200}}>
           <Image
             source={{
@@ -89,10 +89,11 @@ const CustomDrawer = ({route, ...props}) => {
               marginTop: 10,
               fontFamily: 'Nunito-SemiBold',
             }}>
-            {/* {username} */}
+           Yuvarj
           </Text>
         </ImageBackground>
-        <View style={{flex: 1, backgroundColor: '#FFFFFF', paddingTop: 10}}>
+        <View style={{borderBottomWidth:3, borderColor:'#FFFFFF'}}></View>
+        <View style={{flex: 1, backgroundColor: '#07009E', paddingTop: 10}}>
           <DrawerItem
             label="Dashboard"
             labelStyle={styles.ItemText}
@@ -100,7 +101,7 @@ const CustomDrawer = ({route, ...props}) => {
               navigation.navigate('Dashboard')
             }}
             icon={({color, size, focused}) => (
-              <Icon name="speedometer" color={'#2F80ED'} size={20} />
+              <Icon name="speedometer" color={'#FFFFFF'} size={20} />
             )}
           />
           <DrawerItem
@@ -110,7 +111,7 @@ const CustomDrawer = ({route, ...props}) => {
                 <Icon4
                   name={showIcon}
                   size={15}
-                  color={'#2F80ED'}
+                  color={'#FFFFFF'}
                   style={{marginLeft: 129.9}}
                 />
               </View>
@@ -118,7 +119,7 @@ const CustomDrawer = ({route, ...props}) => {
             labelStyle={styles.ItemText}
             onPress={toogleSubMenu}
             icon={({color, size, focused}) => (
-              <Icon2 name="project" color={'#2F80ED'} size={20} />
+              <Icon2 name="project" color={'#FFFFFF'} size={20} />
             )}
           />
 
@@ -133,7 +134,7 @@ const CustomDrawer = ({route, ...props}) => {
                 icon={() => (
                   <Icon3
                     name="table-list"
-                    color={'#2F80ED'}
+                    color={'#FFFFFF'}
                     size={15}
                     style={{marginLeft: 10}}
                   />
@@ -148,7 +149,7 @@ const CustomDrawer = ({route, ...props}) => {
                 icon={() => (
                   <Icon
                     name="add-circle"
-                    color={'#2F80ED'}
+                    color={'#FFFFFF'}
                     size={15}
                     style={{marginLeft: 10}}
                   />
@@ -163,7 +164,7 @@ const CustomDrawer = ({route, ...props}) => {
                 <Icon4
                   name={showClientIcon}
                   size={15}
-                  color={'#2F80ED'}
+                  color={'#FFFFFF'}
                   style={{marginLeft: 145}}
                 />
               </View>
@@ -171,7 +172,7 @@ const CustomDrawer = ({route, ...props}) => {
             labelStyle={styles.ItemText}
             onPress={toogleClientSubMenu}
             icon={({color, size, focused}) => (
-              <Icon5 name="users" color={'#2F80ED'} size={20} />
+              <Icon5 name="users" color={'#FFFFFF'} size={20} />
             )}
           />
 
@@ -186,7 +187,7 @@ const CustomDrawer = ({route, ...props}) => {
                 icon={() => (
                   <Icon3
                     name="table-list"
-                    color={'#2F80ED'}
+                    color={'#FFFFFF'}
                     size={15}
                     style={{marginLeft: 10}}
                   />
@@ -201,7 +202,7 @@ const CustomDrawer = ({route, ...props}) => {
                 icon={() => (
                   <Icon
                     name="add-circle"
-                    color={'#2F80ED'}
+                    color={'#FFFFFF'}
                     size={15}
                     style={{marginLeft: 10}}
                   />
@@ -216,7 +217,7 @@ const CustomDrawer = ({route, ...props}) => {
                 <Icon4
                   name={showVendorIcon}
                   size={15}
-                  color={'#2F80ED'}
+                  color={'#FFFFFF'}
                   style={{marginLeft: 136}}
                 />
               </View>
@@ -224,7 +225,7 @@ const CustomDrawer = ({route, ...props}) => {
             labelStyle={styles.ItemText}
             onPress={toogleVendorSubMenu}
             icon={({color, size, focused}) => (
-              <Icon3 name="list-check" color={'#2F80ED'} size={20} />
+              <Icon3 name="list-check" color={'#FFFFFF'} size={20} />
             )}
           />
 
@@ -239,7 +240,7 @@ const CustomDrawer = ({route, ...props}) => {
                 icon={() => (
                   <Icon3
                     name="table-list"
-                    color={'#2F80ED'}
+                    color={'#FFFFFF'}
                     size={15}
                     style={{marginLeft: 10}}
                   />
@@ -254,7 +255,7 @@ const CustomDrawer = ({route, ...props}) => {
                 icon={() => (
                   <Icon
                     name="add-circle"
-                    color={'#2F80ED'}
+                    color={'#FFFFFF'}
                     size={15}
                     style={{marginLeft: 10}}
                   />
@@ -269,7 +270,7 @@ const CustomDrawer = ({route, ...props}) => {
                 <Icon4
                   name={showLeadIcon}
                   size={15}
-                  color={'#2F80ED'}
+                  color={'#FFFFFF'}
                   style={{marginLeft: 140.9}}
                 />
               </View>
@@ -277,7 +278,7 @@ const CustomDrawer = ({route, ...props}) => {
             labelStyle={styles.ItemText}
             onPress={toogleLeadSubMenu}
             icon={({color, size, focused}) => (
-              <Icon6 name="project-diagram" color={'#2F80ED'} size={20} />
+              <Icon6 name="project-diagram" color={'#FFFFFF'} size={20} />
             )}
           />
 
@@ -292,7 +293,7 @@ const CustomDrawer = ({route, ...props}) => {
                 icon={() => (
                   <Icon3
                     name="table-list"
-                    color={'#2F80ED'}
+                    color={'#FFFFFF'}
                     size={15}
                     style={{marginLeft: 10}}
                   />
@@ -307,7 +308,7 @@ const CustomDrawer = ({route, ...props}) => {
                 icon={() => (
                   <Icon
                     name="add-circle"
-                    color={'#2F80ED'}
+                    color={'#FFFFFF'}
                     size={15}
                     style={{marginLeft: 10}}
                   />
@@ -321,16 +322,16 @@ const CustomDrawer = ({route, ...props}) => {
             onPress={() => {
               navigation.navigate('AutoAssign')}}
             icon={({color, size, focused}) => (
-              <Icon6 name="handshake" color={'#2F80ED'} size={20} />
+              <Icon6 name="handshake" color={'#FFFFFF'} size={20} />
             )}
           />
           
         </View>
       </DrawerContentScrollView>
-      <View style={{padding: 20, borderTopWidth: 3, borderTopColor: '#2F80ED', }}>
+      <View style={{padding: 20, borderTopWidth: 3, borderTopColor: '#FFFFFF' }}>
         <TouchableOpacity style={{flexDirection:'row', alignItems:'center'}}>
-          <Icon5 name='sign-out' color={'#2F80ED'} size={20}/>
-          <Text style={{color:'#2F80ED', fontFamily: 'Nunito-Bold', marginLeft:10}}>Sign Out</Text>
+          <Icon5 name='sign-out' color={'#FFFFFF'} size={20}/>
+          <Text style={{color:'#FFFFFF', fontFamily: 'Nunito-Bold', marginLeft:10}}>Sign Out</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -341,13 +342,13 @@ export default CustomDrawer;
 
 const styles = StyleSheet.create({
   ItemText: {
-    color: '#2F80ED',
+    color: '#FFFFFF',
     fontFamily: 'Nunito-Bold',
     fontSize: 16,
     marginLeft: -20,
   },
   SubMenuText: {
-    color: '#2F80ED',
+    color: '#FFFFFF',
     fontFamily: 'Nunito-Regular',
     fontSize: 15,
     marginLeft: -20,

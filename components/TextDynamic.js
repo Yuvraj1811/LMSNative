@@ -38,7 +38,7 @@ export default TextDynamic;
 
 const styles = StyleSheet.create({
   text: {
-    color: '#2F80ED',
+    color: '#07009E',
     fontFamily: 'Nunito-Medium',
     fontSize: 12,
   },
